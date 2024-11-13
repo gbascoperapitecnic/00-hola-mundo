@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 
-export function TwitterFollowCard({userName = 'unknow', name}){
+export function TwitterFollowCard({userName = 'unknow', name, initialIsFollowing}){
 
     //el estado inicial será false --> el state nos devolverá un array de dos posiciones
-    const [isFollowing, setIsFollowing] = useState(false);
+    const [isFollowing, setIsFollowing] = useState(initialIsFollowing);
     /*
         const state = useState(false);
         const isFollowing = state[0]; --> valor del estado 
@@ -18,6 +18,8 @@ export function TwitterFollowCard({userName = 'unknow', name}){
         //si el valor que tenia isFollowing era true, lo convertimos a false, y al revés
         setIsFollowing(!isFollowing);
     }
+
+    //al cambiar el estado, se renderizará el boton seguir/siguiendo
 
     return(
       <article style={{display: "flex"}}>
